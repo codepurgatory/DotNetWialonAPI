@@ -2,4 +2,4 @@
 <h1 align="center">.Net Wialon API Library</h1>
 <h3 align="center">Wialon Hosting • SDK • Remote API • DotNet Library</h3>
 
-![Static Badge](https://img.shields.io/badge/Project_STATUS-Prepareing_to_publish_first_hooks-512bd4?style=flat-square&logo=dotnet&logoColor=512bd4)
+![Static Badge](https://img.shields.io/badge/Project_Status-Prepareing_to_publish_first_hooks-512bd4?style=flat-square&logo=dotnet&logoColor=512bd4)
