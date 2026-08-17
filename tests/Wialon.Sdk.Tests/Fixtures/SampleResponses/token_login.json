@@ -1,0 +1,12 @@
+{
+  "eid": "abc123def456abc123def456abc123de",
+  "user": {
+    "nm": "test_user",
+    "cls": 1,
+    "id": 648548,
+    "uacl": -1,
+    "bact": 100001
+  },
+  "api_version": 26,
+  "host": "hst-api.wialon.com"
+}

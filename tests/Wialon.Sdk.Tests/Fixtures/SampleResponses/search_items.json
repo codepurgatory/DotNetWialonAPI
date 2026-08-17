@@ -1,0 +1,28 @@
+{
+  "searchSpec": {
+    "itemsType": "avl_unit",
+    "propName": "sys_name",
+    "propValueMask": "*",
+    "sortType": "sys_name",
+    "propType": "",
+    "or_logic": "0"
+  },
+  "dataFlags": 1,
+  "totalItemsCount": 2,
+  "indexFrom": 0,
+  "indexTo": 0,
+  "items": [
+    {
+      "nm": "Bavarian Tractor",
+      "cls": 2,
+      "id": 34868,
+      "uacl": 638138188323
+    },
+    {
+      "nm": "Volvo awesome",
+      "cls": 2,
+      "id": 21728414,
+      "uacl": -1
+    }
+  ]
+}

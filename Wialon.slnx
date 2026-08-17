@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/sandbox/">
+    <Project Path="sandbox/Wialon.Sandbox/Wialon.Sandbox.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Wialon.Sdk/Wialon.Sdk.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Wialon.Sdk.Tests/Wialon.Sdk.Tests.csproj" />
+  </Folder>
+</Solution>
