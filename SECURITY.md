@@ -1,33 +1,35 @@
-# Политика безопасности (Security Policy)
+**English** | [Русский](SECURITY.ru.md)
 
-## ⚠️ Важное уведомление (Disclaimer)
+# Security Policy
 
-> **ВНИМАНИЕ**: Данная библиотека Wialon API SDK написана и сгенерирована при помощи **искусственного интеллекта (ИИ)**.  
-> В настоящий момент проект находится в стадии **активного тестирования, доработки и проверки**.  
-> **Использование библиотеки осуществляется исключительно на ваш собственный страх и риск.**
+## ⚠️ Important Notice (Disclaimer)
 
----
-
-### Основные положения
-
-1. **Тестирование и проверка**:
-   - Несмотря на наличие набора автоматических тестов (xUnit), библиотека может содержать скрытые ошибки, неточности в моделях данных, поведении сетевого слоя или обработке исключений.
-   - Настоятельно рекомендуется проводить **тщательное тестирование** в изолированной/тестовой среде (Sandbox) перед использованием в критически важных или производственных (production) системах.
-
-2. **Работа с токенами и секретами**:
-   - Токен доступа Wialon (`WIALON_ACCESS_TOKEN`) предоставляет доступ к вашим объектам, пользователям и ресурсам в соответствии с назначенными ему правами.
-   - **Никогда не коммитьте файл `.env` в публичные репозитории.** Убедитесь, что `.env` находится в `.gitignore`.
-   - Рекомендуется использовать токены с минимально необходимыми правами доступа (`access_type` / `fl`) и ограниченным временем жизни.
-
-3. **Отказ от ответственности**:
-   - Авторы и разработчики проекта не несут ответственности за любые прямые или косвенные убытки, потерю данных, некорректную отправку команд телематики, блокировку учётных записей или любые другие последствия, возникшие в результате использования данного SDK.
+> **WARNING**: This Wialon API SDK library was written and generated using **Artificial Intelligence (AI)**.  
+> The project is currently in the **active testing, refinement, and validation stage**.  
+> **Use of this library is strictly at your own risk.**
 
 ---
 
-## 🛡 Сообщение об уязвимостях и ошибках
+### Core Provisions
 
-Если вы обнаружили уязвимость в безопасности или критическую ошибку в работе SDK:
+1. **Testing and Validation**:
+   - Despite having an automated test suite (xUnit), the library may contain subtle bugs, data model inaccuracies, unexpected network layer behavior, or unhandled exceptions.
+   - It is **strongly recommended** to conduct extensive testing in an isolated test environment (Sandbox) before deploying to critical or production systems.
 
-1. **Не создавайте публичный Issue** с конфиденциальными данными или эксплойтами.
-2. Создайте закрытый Security Advisory в репозитории GitHub или свяжитесь с владельцем репозитория.
-3. Опишите шаги для воспроизведения и предполагаемое влияние.
+2. **Handling Tokens and Secrets**:
+   - The Wialon Access Token (`WIALON_ACCESS_TOKEN`) grants access to your units, users, and resources according to the assigned permissions.
+   - **Never commit your `.env` file to public repositories.** Verify that `.env` is listed in `.gitignore`.
+   - Use tokens with the minimal required permissions (`access_type` / `fl`) and limited lifetimes.
+
+3. **Limitation of Liability**:
+   - The authors and maintainers of this project are not liable for any direct or indirect damages, data loss, incorrect telematics command execution, account suspension, or any other consequences resulting from the use of this SDK.
+
+---
+
+## 🛡 Reporting Vulnerabilities and Bugs
+
+If you discover a security vulnerability or critical issue in this SDK:
+
+1. **Do not open a public issue** containing confidential information or exploits.
+2. Create a private Security Advisory on GitHub or contact the repository maintainer directly.
+3. Include reproduction steps and describe the expected impact.

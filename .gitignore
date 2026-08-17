@@ -427,3 +427,8 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Documentation and reference files
+wialon-dlya-razrabotchikov.md
+wialon-dlya-razrabotchikov.pdf
+implementation_plan.md

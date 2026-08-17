@@ -1,3 +1,5 @@
+**English** | [Русский](README.ru.md)
+
 ![HEADER](assets/header.png)
 <h1 align="center">.Net Wialon API Library</h1>
 <h3 align="center">Wialon Hosting • SDK • Remote API • DotNet Library</h3>
@@ -7,88 +9,88 @@
 # Wialon API SDK for .NET (C#)
 
 > [!IMPORTANT]
-> ### ⚠️ ВНИМАНИЕ: ОБЯЗАТЕЛЬНО К ОЗНАКОМЛЕНИЮ — [SECURITY.MD](SECURITY.md)!
-> Перед началом работы с библиотекой **настоятельно рекомендуется внимательно изучить документ [SECURITY.md](SECURITY.md)**.
-> Проект находится на этапе **активного тестирования и валидации**. Использование библиотеки осуществляется **исключительно на ваш собственный страх и риск**.
+> ### ⚠️ WARNING: MANDATORY READING — [SECURITY.MD](SECURITY.md)!
+> Before using this library, it is **strongly recommended to carefully review [SECURITY.md](SECURITY.md)**.
+> This project is currently in the **active testing and validation stage**. Use of this library is **strictly at your own risk**.
 
-Полнофункциональная асинхронная клиентская библиотека (SDK) на C# (.NET 8.0) для взаимодействия с Wialon Remote API (Wialon Hosting и Wialon Local).
-
----
-
-## 🚀 Возможности
-
-- **Полное покрытие API Wialon**: 13 специализированных сервисов:
-  - `Core` (`core/*`) — авторизация, поиск объектов/пользователей/ресурсов (`search_item`, `search_items`), пакетные запросы (`batch`), создание объектов, проверка уникальности.
-  - `Items` (`item/*`) — редактирование свойств, переименование, кастомные и административные поля, лог.
-  - `Units` (`unit/*`) — управление свойствами объектов, расчетные флаги, задачи.
-  - `Users` (`user/*`) — управление пользователями, права доступа, пароли, локаль.
-  - `Resources` (`resource/*`) — геозоны, водители, прицепы, уведомления, задания, точки POI.
-  - `Messages` (`messages/*`) — выгрузка телематических сообщений, SMS, команд, событий по интервалам или N последних.
-  - `Reports` (`report/*`) — выполнение отчётов, получение структуры таблиц и строк, выгрузка результатов.
-  - `Events` (`events/*`) — подписка на события в реальном времени, проверка обновлений (`check_updates`).
-  - `Tokens` (`token/*`) — управление API-токенами, создание с правами доступа, удаление.
-  - `Retranslators` (`retranslator/*`) — управление ретрансляторами и статистикой.
-  - `Files` (`file/*`) — работа с файловым хранилищем Wialon.
-  - `Exchange` (`exchange/*`) — импорт и экспорт данных и сообщений в JSON.
-  - `Render` (`render/*`) — работа со слоями карты и рендерингом треков.
-- **Строгая типизация**: Модели `Unit`, `Position`, `Message`, `GeoZone`, `Driver`, `SearchResult<T>`, `Session` и др.
-- **Обработка ошибок**: Автоматический разбор `{"error": <code>}` в типизированные исключения `WialonException` с перечислением `WialonErrorCode`.
-- **Автоматический Retry**: Повторная отправка при ошибке превышения частоты запросов (`1003`).
-- **Песочница**: Интерактивная консольная среда `Wialon.Sandbox` для обкатки всех сценариев.
-- **Юнит-тесты**: Набор тестов с мокированием HTTP без обращения к боевому серверу.
+A full-featured asynchronous C# (.NET 8.0) client library (SDK) for interacting with the Wialon Remote API (Wialon Hosting and Wialon Local).
 
 ---
 
-## 📦 Структура решения
+## 🚀 Features
+
+- **Full Wialon API Coverage**: 13 specialized services:
+  - `Core` (`core/*`) — authentication, item/unit/user/resource search (`search_item`, `search_items`), batch requests (`batch`), object creation, uniqueness check.
+  - `Items` (`item/*`) — property editing, renaming, custom and administrative fields, log retrieval.
+  - `Units` (`unit/*`) — unit property management, calculation flags, commands/tasks.
+  - `Users` (`user/*`) — user management, access rights, passwords, locale settings.
+  - `Resources` (`resource/*`) — geofences, drivers, trailers, notifications, jobs, POIs.
+  - `Messages` (`messages/*`) — telematics data export, SMS, commands, events by interval or last N messages.
+  - `Reports` (`report/*`) — report execution, table structure and row extraction, report export.
+  - `Events` (`events/*`) — real-time event subscriptions, updates polling (`check_updates`).
+  - `Tokens` (`token/*`) — API token management, creation with access permissions, deletion.
+  - `Retranslators` (`retranslator/*`) — retranslator management and statistics.
+  - `Files` (`file/*`) — file storage management.
+  - `Exchange` (`exchange/*`) — data and messages import/export in JSON format.
+  - `Render` (`render/*`) — map layers and track rendering.
+- **Strong Typing**: Models for `Unit`, `Position`, `Message`, `GeoZone`, `Driver`, `SearchResult<T>`, `Session`, and more.
+- **Error Handling**: Automatic parsing of `{"error": <code>}` responses into strongly typed `WialonException` instances with the `WialonErrorCode` enum.
+- **Automatic Retry**: Automatic retry mechanism on rate-limit errors (`1003`).
+- **Interactive Sandbox**: `Wialon.Sandbox` console application for interactive testing and demonstration of all scenarios.
+- **Unit Tests**: Test suite with mocked HTTP clients for offline testing without hitting live servers.
+
+---
+
+## 📦 Solution Structure
 
 ```
 Wialon API SDK/
 ├── src/
-│   └── Wialon.Sdk/         # Основная библиотека классов (.NET 8)
+│   └── Wialon.Sdk/         # Core class library (.NET 8)
 ├── tests/
-│   └── Wialon.Sdk.Tests/   # Набор xUnit юнит-тестов
+│   └── Wialon.Sdk.Tests/   # xUnit unit test suite
 ├── sandbox/
-│   └── Wialon.Sandbox/     # Интерактивная консольная песочница
-├── .env                    # Токен и URL хоста (не коммитится)
-├── .env.example            # Пример конфигурации
-├── SECURITY.md             # Политика безопасности и отказ от ответственности
-└── Wialon.sln              # Solution файл
+│   └── Wialon.Sandbox/     # Interactive console sandbox
+├── .env                    # Host URL and token (ignored by git)
+├── .env.example            # Configuration example
+├── SECURITY.md             # Security policy and disclaimer
+└── Wialon.sln              # Solution file
 ```
 
 ---
 
-## ⚙️ Настройка и конфигурация
+## ⚙️ Configuration & Setup
 
-Создайте или отредактируйте файл `.env` в корне проекта:
+Create or edit the `.env` file in the project root:
 
 ```env
-# 72-значный токен доступа Wialon
+# 72-character Wialon Access Token
 WIALON_ACCESS_TOKEN=your_72_character_token_here
 
-# Хост Wialon (по умолчанию hst-api.wialon.com или адрес вашего Wialon Local)
+# Wialon Host (defaults to hst-api.wialon.com or your Wialon Local address)
 WIALON_API_HOST=https://hst-api.wialon.com
 ```
 
-### Как получить Access Token:
-Перейдите по ссылке в браузере (замените `<host>` на ваш адрес Wialon):
+### How to get an Access Token:
+Open this URL in your browser (replace `<host>` with your Wialon server address):
 ```
 https://<host>/login.html?client_id=MyApp&access_type=-1&duration=0
 ```
 
 ---
 
-## 💻 Быстрый старт
+## 💻 Quick Start
 
-### Инициализация и вход
+### Initialization and Login
 
 ```csharp
 using Wialon.Sdk;
 
-// Вариант 1: Из переменных окружения (.env)
+// Option 1: Load from environment variables (.env)
 var client = WialonClient.FromEnvironment();
 var session = await client.LoginAsync();
 
-// Вариант 2: С явной передачей параметров
+// Option 2: Explicit options
 var client = new WialonClient(new WialonClientOptions
 {
     Host = "https://hst-api.wialon.com",
@@ -97,37 +99,37 @@ var client = new WialonClient(new WialonClientOptions
 await client.LoginAsync();
 ```
 
-### Поиск объектов
+### Searching Units
 
 ```csharp
-// Поиск всех объектов по маске
+// Search all units by pattern
 var searchResult = await client.Core.SearchUnitsAsync("*");
 foreach (var unit in searchResult.Items)
 {
-    Console.WriteLine($"Объект: {unit.Name}, ID: {unit.Id}");
+    Console.WriteLine($"Unit: {unit.Name}, ID: {unit.Id}");
 }
 
-// Получение одного объекта с его последней позицией
+// Fetch a single unit with its last known position
 var unitWithPos = await client.Core.SearchUnitAsync(12345, flags: 1025);
 if (unitWithPos?.Position != null)
 {
-    Console.WriteLine($"Координаты: {unitWithPos.Position.Latitude}, {unitWithPos.Position.Longitude}");
-    Console.WriteLine($"Скорость: {unitWithPos.Position.Speed} км/ч");
+    Console.WriteLine($"Coordinates: {unitWithPos.Position.Latitude}, {unitWithPos.Position.Longitude}");
+    Console.WriteLine($"Speed: {unitWithPos.Position.Speed} km/h");
 }
 ```
 
-### Загрузка телематических сообщений
+### Loading Telematics Messages
 
 ```csharp
-// Загрузка 10 последних сообщений
+// Load last 10 messages
 var messages = await client.Messages.LoadLastAsync(unitId: 12345, lastCount: 10);
 foreach (var msg in messages.Messages)
 {
-    Console.WriteLine($"[{msg.DateTime}] Скорость: {msg.Position?.Speed}, Топливо: {msg.Parameters?["fuel"]}");
+    Console.WriteLine($"[{msg.DateTime}] Speed: {msg.Position?.Speed}, Fuel: {msg.Parameters?["fuel"]}");
 }
 ```
 
-### Выполнение пакетных запросов (Batch)
+### Batch Requests
 
 ```csharp
 var results = await client.Core.BatchAsync(new[]
@@ -139,7 +141,7 @@ var results = await client.Core.BatchAsync(new[]
 
 ---
 
-## 🧪 Запуск тестов
+## 🧪 Running Tests
 
 ```bash
 dotnet test
@@ -147,7 +149,7 @@ dotnet test
 
 ---
 
-## 🎮 Запуск песочницы
+## 🎮 Running the Sandbox
 
 ```bash
 dotnet run --project sandbox/Wialon.Sandbox
@@ -155,8 +157,8 @@ dotnet run --project sandbox/Wialon.Sandbox
 
 ---
 
-## 🔒 Безопасность (Security)
+## 🔒 Security
 
-Обязательно изучите документ [SECURITY.md](SECURITY.md), регламентирующий политику безопасности, рекомендации по обращению с токенами доступа и отказ от ответственности.
+Make sure to read [SECURITY.md](SECURITY.md) for security guidelines, token handling recommendations, and disclaimers.
 
-> **Напоминание:** Всегда тщательно тестируйте сценарии работы с API в изолированной песочнице и\или тестовой среде(Отдельная учетная запись, отдельный ресурс, отдельные объекты, для предотвращения потери или повреждения данных, блокировки учетных записей и тд.) перед интеграцией в производственные системы.
+> **Reminder:** Always thoroughly test your API integration workflows in an isolated sandbox or test environment (separate account, separate resource, isolated test units) before deploying to production systems to avoid data loss, corruption, or account suspension.
